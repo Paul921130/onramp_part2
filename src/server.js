@@ -53,48 +53,15 @@ export function makeServer({ environment = "test" } = {}) {
 
             server.create("propertie", {
                 city: "South Hill",
-                state: "Georgia",
+                state: "Montana",
                 type: "Condo",
                 price: "1190",
-            });
-
-            server.create("propertie", {
-                city: "Attleboro",
-                state: "Georgia",
-                type: "Apartment",
-                price: "218",
-            });
-
-            server.create("propertie", {
-                city: "Attleboro",
-                state: "Georgia",
-                type: "Apartment",
-                price: "218",
-            });
-
-            server.create("propertie", {
-                city: "Attleboro",
-                state: "Georgia",
-                type: "Apartment",
-                price: "218",
-            });
-            server.create("propertie", {
-                city: "Attleboro",
-                state: "Georgia",
-                type: "Apartment",
-                price: "218",
-            });
-            server.create("propertie", {
-                city: "Attleboro",
-                state: "Georgia",
-                type: "Apartment",
-                price: "218",
             });
         },
 
         routes() {
             this.namespace = "api";
-            this.timing = 4000; // default
+            this.timing = 400; // default
             this.get("/properties", (schema) => {
                 console.log(schema);
                 return schema.properties.all();
