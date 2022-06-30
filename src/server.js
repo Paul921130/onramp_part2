@@ -53,9 +53,42 @@ export function makeServer({ environment = "test" } = {}) {
 
             server.create("propertie", {
                 city: "South Hill",
-                state: "Montana",
+                state: "Georgia",
                 type: "Condo",
                 price: "1190",
+            });
+
+            server.create("propertie", {
+                city: "Attleboro",
+                state: "Georgia",
+                type: "Apartment",
+                price: "218",
+            });
+
+            server.create("propertie", {
+                city: "Attleboro",
+                state: "Georgia",
+                type: "Apartment",
+                price: "218",
+            });
+
+            server.create("propertie", {
+                city: "Attleboro",
+                state: "Georgia",
+                type: "Apartment",
+                price: "218",
+            });
+            server.create("propertie", {
+                city: "Attleboro",
+                state: "Georgia",
+                type: "Apartment",
+                price: "218",
+            });
+            server.create("propertie", {
+                city: "Attleboro",
+                state: "Georgia",
+                type: "Apartment",
+                price: "218",
             });
         },
 

@@ -3,6 +3,11 @@ import React, { useState, useEffect, Children } from "react";
 import TableC from "./Components/TableC";
 import { createServer } from "miragejs";
 import { arrayBuffer } from "stream/consumers";
+
+import { Input } from "antd";
+
+import { fun1 } from "./utilty";
+
 interface I_data {
     name: string;
     id: string;
@@ -89,6 +94,25 @@ function App() {
 
     return (
         <>
+            <div className="input-box">
+                <div>
+                    state:
+                    <Input placeholder="Basic usage" />
+                </div>
+                <div>
+                    city:
+                    <Input placeholder="Basic usage" />
+                </div>
+                <div>
+                    type:
+                    <Input placeholder="Basic usage" />
+                </div>
+                <div>
+                    price:
+                    <Input placeholder="Basic usage" />
+                </div>
+            </div>
+
             <TableC data={tableData} loading={loading} />
         </>
     );
