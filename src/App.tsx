@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import TableC from "./Components/TableC";
 import { group_by_state_city, group_by_state_city_type } from "./utilty";
+import { Col, Divider, Row, Input } from "antd";
 
 interface I_data {
     name: string;
@@ -42,6 +43,23 @@ function App() {
 
     return (
         <>
+            <Row justify="space-around">
+                <Col span={4}>
+                    <Input placeholder="Basic usage" />
+                </Col>
+                <Col span={4}>
+                    <Input placeholder="Basic usage" />
+                </Col>
+                <Col span={4}>
+                    <Input placeholder="Basic usage" />
+                </Col>
+                <Col span={4}>
+                    <Input placeholder="Basic usage" />
+                </Col>
+                <Col span={4}>
+                    <Input placeholder="Basic usage" />
+                </Col>
+            </Row>
             <TableC data={tableData} loading={loading} />
         </>
     );
