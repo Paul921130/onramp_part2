@@ -11,8 +11,8 @@ import { Col, Row, Input, InputNumber, Button } from "antd";
 interface I_tableData {
     state: string;
     type: string;
-    city: any;
-    count: any;
+    city: string;
+    count: number;
     avgPrice: number;
 }
 

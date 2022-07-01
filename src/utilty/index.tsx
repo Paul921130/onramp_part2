@@ -1,8 +1,17 @@
+interface I_Data {
+    city: string;
+    id: string;
+    price: string;
+    state: string;
+    type: string;
+}
+
 //將同state、同city組成一個群組
-export const group_by_state_city = (arr: any[]) => {
+export const group_by_state_city = (arr: I_Data[]) => {
+    console.log(arr);
     let tmpObj: any = {};
     //
-    let result = arr.reduce(function (r, o) {
+    let result: any = arr.reduce(function (r: any, o) {
         let key = o.state + "-" + o.city;
         if (!tmpObj[key]) {
             tmpObj[key] = { ...o }; // create a copy of o
@@ -30,9 +39,10 @@ export const group_by_state_city = (arr: any[]) => {
     return result;
 };
 //將同state、同city同type組成一個群組
-export const group_by_state_city_type = (arr: any[]) => {
+export const group_by_state_city_type = (arr: I_Data[]) => {
+    console.log(arr);
     let tmpObj: any = {};
-    let result = arr.reduce(function (r, o) {
+    let result = arr.reduce(function (r: any, o) {
         let key = o.state + "-" + o.city + "-" + o.type;
         if (!tmpObj[key]) {
             tmpObj[key] = { ...o }; // create a copy of o
