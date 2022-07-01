@@ -59,3 +59,38 @@ export const group_by_state_city_type = (arr: any[]) => {
     });
     return result;
 };
+//fitlerData
+export const filter_data = (arr: any[], filter: any) => {
+    let tmp = [...arr];
+    Object.keys(filter).forEach((child) => {
+        if (filter[child] == "" || child === "priceRange") return false;
+        console.log("child", child);
+        console.log("child", filter[child]);
+        tmp = tmp.filter(
+            (e) => e[child].toLowerCase() === filter[child].toLowerCase()
+        );
+    });
+    //如果filter的obj有價格區間的情況
+    if (filter.priceRange?.length > 0) {
+        let sortRange = filter.priceRange.filter(
+            (e: number | string) => e !== ""
+        );
+
+        if (sortRange.length > 1) {
+            sortRange.sort((a: number, b: number) => a - b);
+        }
+        console.log("sortRange", sortRange);
+
+        if (sortRange.length === 1) {
+            tmp = tmp.filter((e) => e.avgPrice <= sortRange[0]);
+        }
+        if (sortRange.length === 2) {
+            tmp = tmp.filter(
+                (e) => e.avgPrice <= sortRange[1] && e.avgPrice >= sortRange[0]
+            );
+        }
+    }
+
+    return tmp;
+    // console.log("tmp", tmp);
+};

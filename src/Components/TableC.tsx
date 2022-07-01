@@ -7,6 +7,7 @@ interface DataType {
     key?: string;
     city: string;
     state: string;
+    type: string;
     avgPrice: number;
     count: number;
 }
@@ -19,12 +20,16 @@ const columns: ColumnsType<DataType> = [
         title: "State",
         dataIndex: "state",
         key: "state",
-        // render: (text) => <a>{text}</a>,
     },
     {
         title: "City",
         dataIndex: "city",
         key: "city",
+    },
+    {
+        title: "Type",
+        dataIndex: "type",
+        key: "type",
     },
     {
         title: "Houses",
@@ -43,6 +48,7 @@ const data: DataType[] = [
         key: "1",
         avgPrice: 0,
         city: "-",
+        type: "-",
         count: 0,
         state: "-",
     },
